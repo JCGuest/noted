@@ -1,11 +1,11 @@
 import React from 'react';
+// import clsx from 'clsx';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { Drawer as MUIDrawer } from '@material-ui/core';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/core/Menu';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
 import Note from './Note.js';
 
 function Drawer() {
@@ -15,9 +15,9 @@ function Drawer() {
     setOpen(!open);
   };
 
-  const handleDrawerClose = () => {
-    setOpen(false);
-  };
+  //   const handleDrawerClose = () => {
+  //     setOpen(false);
+  //   };
 
   const drawerWidth = 300;
 
@@ -82,9 +82,9 @@ function Drawer() {
     <div>
       <AppBar position='fixed'>
         <Toolbar>
-          <Typography variant='h6' noWrap>
-            Persistent drawer
-          </Typography>
+          {/* <Typography variant='h6' noWrap> */}
+          Persistent drawer
+          {/* </Typography> */}
           <IconButton
             className='icon-button'
             color='pink'
@@ -98,7 +98,7 @@ function Drawer() {
       </AppBar>
       <MUIDrawer
         variant='persistent'
-        anchor='left'
+        anchor='right'
         open={open}
         className='drawer'
       >

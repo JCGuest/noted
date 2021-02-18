@@ -1,4 +1,4 @@
-.note {
+/* div.note {
   margin: 20px auto;
   font-family: 'Lato';
   background: #666;
@@ -10,24 +10,24 @@
   padding: 0;
 }
 
-h2 {
+h2.note {
   font-weight: bold;
   font-size: 2rem;
 }
-p {
+p.note {
   font-family: 'Reenie Beanie';
   font-size: 2rem;
 }
 ul,
-li {
+li.note {
   list-style: none;
 }
-ul {
+ul.note {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
-ul li a {
+ul li a.note {
   text-decoration: none;
   color: #000;
   background: #ffc;
@@ -68,4 +68,4 @@ ul li a:focus {
 
 ul li {
   margin: 1em;
-}
+} */
