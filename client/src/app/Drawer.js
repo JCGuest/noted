@@ -6,6 +6,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
+import Note from './Note.js';
 
 function Drawer() {
   const [open, setOpen] = React.useState(false);
@@ -88,7 +89,7 @@ function Drawer() {
             className='icon-button'
             color='pink'
             aria-label='open drawer'
-            // edge='end'
+            edge='end'
             onClick={handleDrawerOpen}
           >
             <MenuIcon className='menu-icon' />
@@ -101,7 +102,7 @@ function Drawer() {
         open={open}
         className='drawer'
       >
-        <h1>Hello</h1>
+        <Note />
       </MUIDrawer>
     </div>
   );
