@@ -1,6 +1,6 @@
 import React from 'react';
 import Drawer from './Drawer';
-import '../App.css';
+import '../styles/App.css';
 
 function App() {
   return (

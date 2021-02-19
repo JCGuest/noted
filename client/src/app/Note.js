@@ -1,5 +1,5 @@
 import React from 'react';
-// import '../note.css';
+// import '../styles/note.css';
 
 function Note(props) {
   return (
