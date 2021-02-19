@@ -1,5 +1,6 @@
 import React from 'react';
-// import clsx from 'clsx';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Login from './Login.js';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { Drawer as MUIDrawer } from '@material-ui/core';
 import AppBar from '@material-ui/core/AppBar';
@@ -80,22 +81,27 @@ function Drawer() {
 
   return (
     <div>
-      <AppBar position='fixed'>
-        <Toolbar>
-          {/* <Typography variant='h6' noWrap> */}
-          Persistent drawer
-          {/* </Typography> */}
-          <IconButton
-            className='icon-button'
-            color='pink'
-            aria-label='open drawer'
-            edge='end'
-            onClick={handleDrawerOpen}
-          >
-            <MenuIcon className='menu-icon' />
-          </IconButton>
-        </Toolbar>
-      </AppBar>
+      <Router>
+        <Switch>
+          <AppBar position='fixed'>
+            <Toolbar>
+              {/* <Typography variant='h6' noWrap> */}
+              Persistent drawer
+              {/* </Typography> */}
+              <IconButton
+                className='icon-button'
+                color='pink'
+                aria-label='open drawer'
+                edge='end'
+                onClick={handleDrawerOpen}
+              >
+                <MenuIcon className='menu-icon' />
+              </IconButton>
+              <IconButton>Login</IconButton>
+            </Toolbar>
+          </AppBar>
+        </Switch>
+      </Router>
       <MUIDrawer
         variant='persistent'
         anchor='right'

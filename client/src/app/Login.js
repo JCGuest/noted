@@ -1,23 +1,23 @@
 import React from 'react';
-import '../styles/Login.css';
+import '../styles/login.css';
 import { Button } from '@material-ui/core';
-import { auth, provider } from '../firebase.js';
+// import { auth, provider } from '../firebase.js';
 import { useStateValue } from '../StateProvider.js';
 import { actionTypes } from '../reducer';
 
 const Login = () => {
-  const [{}, dispatch] = useStateValue();
-  const signIn = () => {
-    auth
-      .signInWithPopup(provider)
-      .then((result) => {
-        dispatch({
-          type: actionTypes.SET_USER,
-          user: result.user
-        });
-      })
-      .catch((e) => alert(e.message));
-  };
+  //   const [{}, dispatch] = useStateValue();
+  //   const signIn = () => {
+  //     auth
+  //       .signInWithPopup(provider)
+  //       .then((result) => {
+  //         dispatch({
+  //           type: actionTypes.SET_USER,
+  //           user: result.user
+  //         });
+  //       })
+  //       .catch((e) => alert(e.message));
+  //   };
 
   return (
     <div className='login'>
@@ -29,7 +29,7 @@ const Login = () => {
         <div className='login__text'>
           <h1>Sign in to WhatsApp</h1>
         </div>
-        <Button type='submit' onClick={signIn}>
+        <Button type='submit' onClick={console.log('submit')}>
           Sign in with Google
         </Button>
       </div>
