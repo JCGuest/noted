@@ -1,5 +1,6 @@
-/* div.note {
-  margin: 20px auto;
+div.note {
+  /* margin: 20px auto; */
+  height: 100vh;
   font-family: 'Lato';
   background: #666;
   color: #fff;
@@ -32,11 +33,11 @@ ul li a.note {
   color: #000;
   background: #ffc;
   display: block;
-  height: 10em;
+  height: 10m;
   width: 10em;
   padding: 1em;
   box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.7);
-  transform: rotate(-6deg);
+  /* transform: rotate(-6deg); */
   transition: transform 0.15s linear;
 }
 
@@ -68,4 +69,4 @@ ul li a:focus {
 
 ul li {
   margin: 1em;
-} */
+}

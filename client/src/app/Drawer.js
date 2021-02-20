@@ -10,6 +10,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Note from './Note.js';
+import Typography from '@material-ui/core/Typography';
 
 function Drawer() {
   const [{}, dispatch] = useStateValue();
@@ -98,9 +99,9 @@ function Drawer() {
     <div>
       <AppBar position='fixed'>
         <Toolbar>
-          {/* <Typography variant='h6' noWrap> */}
-          Persistent drawer
-          {/* </Typography> */}
+          <Typography variant='h6' noWrap>
+            Noted🗒️
+          </Typography>
           <IconButton
             className='icon-button'
             color='pink'
@@ -110,7 +111,11 @@ function Drawer() {
           >
             <MenuIcon className='menu-icon' />
           </IconButton>
-          <IconButton onClick={signIn}>Login</IconButton>
+          <IconButton onClick={signIn}>
+            <Typography variant='h6' noWrap>
+              Login
+            </Typography>
+          </IconButton>
         </Toolbar>
       </AppBar>
 
@@ -120,6 +125,9 @@ function Drawer() {
         open={open}
         className='drawer'
       >
+        <Note />
+        <Note />
+        <Note />
         <Note />
       </MUIDrawer>
     </div>
