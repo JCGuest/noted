@@ -1,6 +1,8 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Login from './Login.js';
+import { useStateValue } from '../StateProvider.js';
+import { actionTypes } from '../reducer';
+import { auth, provider } from '../firebase.js';
+import { NavLink } from 'react-router-dom';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { Drawer as MUIDrawer } from '@material-ui/core';
 import AppBar from '@material-ui/core/AppBar';
@@ -10,6 +12,19 @@ import MenuIcon from '@material-ui/icons/Menu';
 import Note from './Note.js';
 
 function Drawer() {
+  const [{}, dispatch] = useStateValue();
+  const signIn = () => {
+    auth
+      .signInWithPopup(provider)
+      .then((result) => {
+        dispatch({
+          type: actionTypes.SET_USER,
+          user: result.user
+        });
+      })
+      .catch((e) => alert(e.message));
+  };
+
   const [open, setOpen] = React.useState(false);
 
   const handleDrawerOpen = () => {
@@ -81,27 +96,24 @@ function Drawer() {
 
   return (
     <div>
-      <Router>
-        <Switch>
-          <AppBar position='fixed'>
-            <Toolbar>
-              {/* <Typography variant='h6' noWrap> */}
-              Persistent drawer
-              {/* </Typography> */}
-              <IconButton
-                className='icon-button'
-                color='pink'
-                aria-label='open drawer'
-                edge='end'
-                onClick={handleDrawerOpen}
-              >
-                <MenuIcon className='menu-icon' />
-              </IconButton>
-              <IconButton>Login</IconButton>
-            </Toolbar>
-          </AppBar>
-        </Switch>
-      </Router>
+      <AppBar position='fixed'>
+        <Toolbar>
+          {/* <Typography variant='h6' noWrap> */}
+          Persistent drawer
+          {/* </Typography> */}
+          <IconButton
+            className='icon-button'
+            color='pink'
+            aria-label='open drawer'
+            edge='end'
+            onClick={handleDrawerOpen}
+          >
+            <MenuIcon className='menu-icon' />
+          </IconButton>
+          <IconButton onClick={signIn}>Login</IconButton>
+        </Toolbar>
+      </AppBar>
+
       <MUIDrawer
         variant='persistent'
         anchor='right'
