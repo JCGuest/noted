@@ -2,7 +2,7 @@ import React from 'react';
 import { useStateValue } from '../StateProvider.js';
 import { actionTypes } from '../reducer';
 import { auth, provider } from '../firebase.js';
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { Drawer as MUIDrawer } from '@material-ui/core';
 import AppBar from '@material-ui/core/AppBar';
@@ -18,10 +18,12 @@ function Drawer() {
     auth
       .signInWithPopup(provider)
       .then((result) => {
+        console.log(result);
         dispatch({
           type: actionTypes.SET_USER,
           user: result.user
         });
+        // get user data from firebase and log user in
       })
       .catch((e) => alert(e.message));
   };
