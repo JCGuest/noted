@@ -1,0 +1,4 @@
+{
+  "mongoURI": "mongodb+srv://jg:Password-1@noted.sufke.mongodb.net/devconnect?retryWrites=true&w=majority",
+  "jwtsecret": "mysecrettoken"
+}
