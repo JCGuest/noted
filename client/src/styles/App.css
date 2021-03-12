@@ -10,3 +10,14 @@
   display: flex;
   width: 500;
 } */
+
+.window {
+  padding-top: 70px;
+  /* padding-left: 10px; */
+}
+
+.iframe {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
