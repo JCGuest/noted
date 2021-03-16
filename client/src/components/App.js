@@ -1,6 +1,6 @@
 import React from 'react';
 import Drawer from './Drawer';
-import Window from './Window';
+import Landing from './Landing';
 // import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import '../styles/App.css';
 
@@ -14,7 +14,7 @@ function App() {
         <Window/>
       </Router> */}
       <Drawer />
-      <Window />
+      <Landing />
     </div>
   );
 }
