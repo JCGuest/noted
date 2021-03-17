@@ -43,14 +43,18 @@ body {
 /* Landing Page */
 .landing {
   position: relative;
-  background: url('./showcase.jpg') no-repeat center center/cover;
+  /* background: url('./hardy.png') no-repeat center center/cover; */
+  background-image: url(https://bing.biturl.top/?resolution=1920&format=image&index=0&mkt=zh-CN);
+  background-repeat: no-repeat;
   height: 100vh;
+  /* width: 100%; */
+  background-size: cover;
 }
 
 .landing-inner {
   color: #fff;
   height: 100%;
-  width: 80%;
+  width: 100%;
   margin: auto;
   display: flex;
   flex-direction: column;
