@@ -12,7 +12,7 @@ const Landing = () => {
     <section className='landing'>
       <div className='dark-overlay'>
         <div className='landing-inner'>
-          <h1 className='x-large'>Developer Connector</h1>
+          <h1 className='x-large'>Welcome to Noted</h1>
           <form className='form' onSubmit={(e) => onSubmit(e)}>
             <input
               type='text'
