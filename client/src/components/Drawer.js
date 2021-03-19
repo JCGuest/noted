@@ -7,16 +7,13 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Note from './Note.js';
 import Typography from '@material-ui/core/Typography';
-import { connect } from 'react-redux';
-import { setUser } from '../redux/actions';
 
-function Drawer() {
+const Drawer = () => {
   const signIn = () => {
     auth
       .signInWithPopup(provider)
       .then((result) => {
-        console.log(result);
-        setUser(result.user);
+        console.log(result.user.email);
         // get user data from firebase and log user in
       })
       .catch((e) => alert(e.message));
@@ -62,6 +59,6 @@ function Drawer() {
       </MUIDrawer>
     </div>
   );
-}
+};
 
-export default connect(null, { setUser })(Drawer);
+export default Drawer;
