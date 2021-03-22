@@ -1,20 +1,26 @@
 import React from 'react';
+import Note from './Note.js';
+// Firebase
 import { auth, provider } from '../firebase.js';
 import { Drawer as MUIDrawer } from '@material-ui/core';
+// material-ui
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-import Note from './Note.js';
 import Typography from '@material-ui/core/Typography';
+// Redux
+import { setUser } from '../actions/users';
+import { connect } from 'react-redux';
 
-const Drawer = () => {
+const Drawer = ({ setUser }) => {
+  // get user data from firebase and log user in
   const signIn = () => {
     auth
       .signInWithPopup(provider)
       .then((result) => {
-        console.log(result.user.email);
-        // get user data from firebase and log user in
+        console.log(result);
+        setUser(result.user.email);
       })
       .catch((e) => alert(e.message));
   };
@@ -61,4 +67,8 @@ const Drawer = () => {
   );
 };
 
-export default Drawer;
+const mapStateToProps = (state) => ({
+  user: state.user
+});
+
+export default connect(mapStateToProps, { setUser })(Drawer);

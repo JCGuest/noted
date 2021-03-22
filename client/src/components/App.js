@@ -8,18 +8,18 @@ import { Provider } from 'react-redux';
 import store from '../store.js';
 
 const App = () => {
-return (
-  <Provider store={store}>
-    {/* <Router>
+  return (
+    <Provider store={store}>
+      {/* <Router>
         	<Switch> */}
-    {/* <Route exact path='/' component={Drawer} /> */}
-    {/* </Switch>
+      {/* <Route exact path='/' component={Drawer} /> */}
+      {/* </Switch>
        	 <Window/>
      	 </Router> */}
-    <Drawer />
-    <Landing />
-  </Provider>
-   );
+      <Drawer />
+      <Landing />
+    </Provider>
+  );
 };
 
 export default App;
